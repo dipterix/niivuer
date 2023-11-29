@@ -1,0 +1,7 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+inst/niivue
+node_modules
+.DS_Store

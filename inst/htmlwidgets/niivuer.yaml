@@ -1,0 +1,7 @@
+dependencies:
+  - name: niivue
+    version: 0.0.1
+    src: niivue-js/dist/
+    script:
+      - main.js
+
