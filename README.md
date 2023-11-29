@@ -11,4 +11,10 @@ This package `niivuer` is designed for R users who wish to integrate
 pak::pak("dipterix/niivuer")
 ```
 
+### Quick start
 
+To start the pilot demo:
+
+```r
+niivuer::niivue(NULL)
+```
