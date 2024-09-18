@@ -1,7 +1,7 @@
 dependencies:
   - name: niivue
     version: 0.0.1
-    src: niivue-js/dist/
+    src: niivuer-js-build/
     script:
-      - main.js
+      - niivuer-js-main.js
 
