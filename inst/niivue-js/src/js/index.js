@@ -1,3 +1,8 @@
-import { Niivue } from '@niivue/niivue';
+import { NiivuerApp } from './core/NiivuerApp.js';
+import { RShinyDriver } from './external/RShinyDriver.js';
 
-window.NiiVue = Niivue;
+
+window.Niivuer = {
+  NiivuerApp : NiivuerApp,
+  RShinyDriver : RShinyDriver
+};

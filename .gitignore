@@ -3,5 +3,6 @@
 .RData
 .Ruserdata
 inst/niivue
+inst/niivue-js/dist
 node_modules
 .DS_Store

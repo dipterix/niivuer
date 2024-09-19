@@ -6,25 +6,34 @@ HTMLWidgets.widget({
 
   factory: function(el, width, height) {
 
-    // generate a canvas and appendChild to el
-    const canvas = document.createElement("canvas");
-    el.appendChild( canvas );
-    let niivue;
+    let app;
+
 
     return {
 
       renderValue: function(x) {
 
-        if( niivue === undefined ) {
-          niivue = new NiiVue({crosshairColor: [0,1,0,0.5], textHeight: 0.5});
-          niivue.attachToCanvas(canvas);
+        if( app === undefined ) {
+          app = new window.Niivuer.NiivuerApp({
+            sliceType: 4,
+            multiplanarLayout: 2,
+          }, el);
+          window.app = app;
+
+          app.addDriver( window.Niivuer.RShinyDriver );
         }
+        app.renderValue(x);
+        window.x = x;
 
       },
 
       resize: function(width, height) {
 
-        // TODO: code to re-render the widget with a new size
+        if( app ) {
+
+          app.updateSize();
+
+        }
 
       }
 

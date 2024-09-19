@@ -3,11 +3,43 @@
 #' Creates a widget that bridges 'NiiVue', a powerful 3D brain viewer and R-shiny
 #'
 #' @export
-niivue <- function(message, width = NULL, height = NULL, elementId = NULL) {
+niivue <- function(
+    volume_list = list(
+      list(
+        url= "https://niivue.github.io/niivue/images/mni152.nii.gz",
+        colormap= "gray"
+      ),
+      list(
+        url= "https://niivue.github.io/niivue/images/hippo.nii.gz",
+        colormap= "red"
+      )
+    ),
+    mesh_list = list(
+      list(
+        url = "https://niivue.github.io/niivue/images/BrainMesh_ICBM152.lh.mz3"
+      )
+    ),
+    viewer_settings = list(
+      setMultiplanarLayout = 2,
+      setSliceMM = TRUE,
+      setSliceType = 4
+    ),
+    controller_settings = list(
+    ),
+    ...,
+    width = NULL, height = NULL, elementId = NULL) {
 
-  # forward options using x
+  volume_list <- unname(as.list(volume_list))
+  mesh_list <- unname(as.list(mesh_list))
+
+
   x = list(
-    message = message
+    volumeList = volume_list,
+    meshList = mesh_list,
+    viewerSettings = as.list(viewer_settings),
+    controllerSettings = as.list(controller_settings),
+    # generate app level
+    appSettings = list(...)
   )
 
   # create widget
