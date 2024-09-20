@@ -2,8 +2,26 @@
 #'
 #' Creates a widget that bridges 'NiiVue', a powerful 3D brain viewer and R-shiny
 #'
+#' @param volume_list list of items, each item is a volume file
+#' @param mesh_list list of items, each item is a mesh file
+#' @param viewer_settings initial call to set viewer status
+#' @param controller_settings initial controller settings
+#' @param ... application settings
+#' @param width,height widget size
+#' @param elementId passed to \code{\link[htmlwidgets]{createWidget}}.
+#' @returns A \code{'niivuer'} widget
+#'
+#' @examples
+#'
+#' if( interactive() ) {
+#'
+#'   niivuer()
+#'
+#' }
+#'
+#'
 #' @export
-niivue <- function(
+niivuer <- function(
     volume_list = list(
       list(
         url= "https://niivue.github.io/niivue/images/mni152.nii.gz",
