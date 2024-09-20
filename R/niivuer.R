@@ -108,7 +108,6 @@ renderNiivuer <- function(expr, env = parent.frame(), quoted = FALSE) {
 }
 
 
-#' @rdname niivuer-shiny
 #' @export
 print.niivuer <- function(x, ...) {
 
