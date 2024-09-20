@@ -106,3 +106,24 @@ renderNiivuer <- function(expr, env = parent.frame(), quoted = FALSE) {
   if (!quoted) { expr <- substitute(expr) } # force quoted
   htmlwidgets::shinyRenderWidget(expr, niivuerOutput, env, quoted = TRUE)
 }
+
+
+#' @rdname niivuer-shiny
+#' @export
+print.niivuer <- function(x, ...) {
+
+  os <- R.version$os
+  if(isTRUE(grepl("^(emsc|wasm)", os, ignore.case = TRUE))) {
+    # This is WASM
+    path <- save_selfcontained(x)
+    path <- normalizePath(path, winslash = "/")
+    webr <- asNamespace("webr")
+    webr$viewer_install()
+    viewer <- getOption("viewer")
+    viewer(path)
+  } else {
+    NextMethod("print")
+  }
+
+  invisible(x)
+}

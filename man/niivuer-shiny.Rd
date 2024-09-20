@@ -4,11 +4,14 @@
 \alias{niivuer-shiny}
 \alias{niivuerOutput}
 \alias{renderNiivuer}
+\alias{print.niivuer}
 \title{Shiny bindings for 'NiiVue'}
 \usage{
 niivuerOutput(outputId, width = "100\%", height = "500px")
 
 renderNiivuer(expr, env = parent.frame(), quoted = FALSE)
+
+\method{print}{niivuer}(x, ...)
 }
 \arguments{
 \item{outputId}{output variable to read from}
