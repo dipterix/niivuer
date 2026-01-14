@@ -4,7 +4,8 @@ app <- shiny::shinyApp(
     shiny::sidebarLayout(
       sidebarPanel = shiny::sidebarPanel(
         width = 3L,
-        shiny::verbatimTextOutput("text")
+        shiny::verbatimTextOutput("text"),
+        shiny::textInput("text", "Input sth")
       ),
       mainPanel = shiny::mainPanel(
         width = 9L,
@@ -14,7 +15,7 @@ app <- shiny::shinyApp(
   ),
   server = function(input, output, session) {
     output$out <- niivuer::renderNiivuer({
-      niivuer::niivue()
+      niivuer::niivuer()
     })
     output$text <- shiny::renderPrint({
       controllers <- input$out_controllers
@@ -23,6 +24,7 @@ app <- shiny::shinyApp(
       } else {
         str(controllers)
       }
+      print(input$text)
     })
   },
   options = list(

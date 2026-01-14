@@ -5,11 +5,11 @@
 \title{'NiiVue' for R}
 \usage{
 niivuer(
-  volume_list = list(list(url = "https://niivue.github.io/niivue/images/mni152.nii.gz",
-    colormap = "gray"), list(url = "https://niivue.github.io/niivue/images/hippo.nii.gz",
-    colormap = "red")),
+  volume_list = list(list(url = "https://niivue.com/demos/images/mni152.nii.gz", colormap
+    = "gray"), list(url = "https://niivue.com/demos/images/hippo.nii.gz", colormap =
+    "red")),
   mesh_list = list(list(url =
-    "https://niivue.github.io/niivue/images/BrainMesh_ICBM152.lh.mz3")),
+    "https://niivue.com/demos/images/BrainMesh_ICBM152.lh.mz3")),
   viewer_settings = list(setMultiplanarLayout = 2, setSliceMM = TRUE, setSliceType = 4),
   controller_settings = list(),
   ...,

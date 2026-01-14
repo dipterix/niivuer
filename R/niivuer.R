@@ -24,17 +24,17 @@
 niivuer <- function(
     volume_list = list(
       list(
-        url= "https://niivue.github.io/niivue/images/mni152.nii.gz",
+        url= "https://niivue.com/demos/images/mni152.nii.gz",
         colormap= "gray"
       ),
       list(
-        url= "https://niivue.github.io/niivue/images/hippo.nii.gz",
+        url= "https://niivue.com/demos/images/hippo.nii.gz",
         colormap= "red"
       )
     ),
     mesh_list = list(
       list(
-        url = "https://niivue.github.io/niivue/images/BrainMesh_ICBM152.lh.mz3"
+        url = "https://niivue.com/demos/images/BrainMesh_ICBM152.lh.mz3"
       )
     ),
     viewer_settings = list(
